@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<title>Lu Zhan Qi Judge</title>
+<link rel="stylesheet" type="text/css" href="bootstrap.css" media="screen" />
+
+<p align="center">
+<font size="15" color="red">Lu Zhan Qi Judge</font>
+</p>
+
+<p align="center">
+<i><font size="4" color="black">By Michael D Jia</font></i>
+</p>
+
+<p align="center">
+<button type="button" onclick="choose(1);"><img src="siling.png" height="48"/>Si Ling</button>
+<button type="button" onclick="choose(2);"><img src="junzhang.png" height="48"/>Jun Zhang</button>
+<button type="button" onclick="choose(3);"><img src="shizhang.png" height="48"/>Shi Zhang</button>
+<button type="button" onclick="choose(4);"><img src="luzhang.png" height="48"/>Lu Zhang</button>
+</p>
+<p align="center">
+<button type="button" onclick="choose(5);"><img src="tuanzhang.png" height="48"/>Tuan Zhang</button>
+<button type="button" onclick="choose(6);"><img src="yingzhang.png" height="48"/>Ying Zhang</button>
+<button type="button" onclick="choose(7);"><img src="lianzhang.png" height="48"/>Lian Zhang</button>
+<button type="button" onclick="choose(8);"><img src="paizhang.png" height="48"/>Pai Zhang</button>
+</p>
+<p align="center">
+<button type="button" onclick="choose(9);"><img src="gongbing.png" height="48"/>Gong Bing</button>
+<button type="button" onclick="choose(10);"><img src="zhadan.png" height="48"/>Zha Dan</button>
+<button type="button" onclick="choose(11);"><img src="dilei.png" height="48"/>Di Lei</button>
+<button type="button" onclick="choose(12);"><img src="junqi.png" height="48"/>Jun Qi</button>
+</p>
+<p align="center">
+Pronounced “loo-tsahn-chee,” written Luzhanqi or Lu Zhan Qi, meaning “Land Battle Game,” this chess variant is popular throughout China. It is also known as Lu Zhan Jun Qi (Land Battle Army Game), or simply Jun Qi (Army Game), It appears to be derived from the very popular chess form Xiangqi, perhaps influenced by Dou Shou Qi, and bears similarities to several Western war games.
+<p align="center">
+The Board
+</p>
+
+<p align="center">
+The playing “board” is usually simple folded paper, marked as shown on the cover of this pamphlet. Here are the meanings of the Chinese marking: 
+
+ the soldier station in luzhanqi
+
+</p>
+<p align="center">
+Soldier Station. An ordinary playing space. Pieces are moved on and off these spots and can be attacked while standing on them.
+</p>
+<p align="center">
+The camp space in luzhanqi
+Camp. A safety circle. A piece on this spot can not be attacked.
+the headquarters space in luzhanqi
+Headquarters. There are two of these on each side. One of the two holds the flag.
+the front line (not a playing space) in luzhanqi
+Front Line. These markings stand between the two sides of the board. Pieces do not land on these squares; they pass over them.
+the mountain border (not a playing space) in luzhanqi
+Mountain Border. Two obstacles that stand in the dividing line of the board. Pieces do not move onto or over these spaces; they are forced to pass over the Front Line. 
+</p>
+<p align="center">
+The line on which pieces move in luzhanqi
+Lines. Pieces move from one playing space to the very next one, following these lines. 
+</p>
+<p align="center">
+The railroad, on which pieces may move long distances in luzhanqi
+</p>
+<p align="center">
+Railroad. Any moving piece is allowed to go any number of playing spaces as long as it stays on one straight railroad line.
+The Engineer has the special ability to travel around Railroad corners as well.
+</p>
+
+<p align="center">
+The Pieces
+</p>
+<p align="center">
+The pieces shown below are from two different sets: The black calligraphy is from a modern plastic set and the red images are from an older wooden one. Note three differences: The older set has pictures, has vertically arranged calligraphy, and uses old style Chinese characters. Your set may have characteristics of either of these sets — but it’s the same game.
+</p>
+<p align="center">
+Each piece is shown here with:
+its English equivalent (e.g., Field Marshal), 
+its rank (e.g., Rank: 1),
+its Chinese pronunciation (e.g., “siling”),
+and the quantity in each player’s army (e.g., (1) )
+</p>
+<p align="center">
+The first nine pieces are soldiers of various ranks, shown from highest (1) to lowest (9); the remaining three are objects, each with its own special characteristics.
+</p>
+<p align="center">
+<img src="Luzhanqi.png"/>
+</p>
+<p align="center">
+<a href="http://ancientchess.com/page/play-luzhanqi.htm">Visit the ancient chess website</a>
+</p>
+<script>
+var lastSet = 0;
+var choiceOne = 0;
+var choiceTwo = 0;
+function choose(a) {
+if(lastSet == 0)
+    choiceOne = a;
+else 
+    choiceTwo = a;
+    lastSet += 1;
+    lastSet %= 2;
+    if (lastSet === 0){
+    judge();
+   }
+    
+}
+function judge() {
+    var input1 = choiceOne;
+    var input2 = choiceTwo;
+	if(input1 == 10 || input2 == 10)
+	{
+		alert("Tie!");
+	}
+	else if(input1 == 11 || input2 == 11)
+	{
+		if(input1 == 9)
+		{
+			alert("Player1 wins!");
+		}
+		else if(input2 == 9)
+		{
+			alert("Player2 wins!");
+		}
+		else if(input1 == 11)
+		{
+			alert("Player1 wins!");
+		}
+		else if(input2 == 11)
+		{
+			alert("Player2 wins!");
+		}
+	}
+	else if(input1 == 12 || input2 == 12)
+	{
+		if(input1 == 12)
+		{
+		alert("Player2 wins!");
+		}
+		else if(input2 == 12)
+		{
+		alert("Player1 wins!");
+		}
+	}
+	else if(input1 < input2)
+	{
+		alert("Player1 wins!");
+	}
+	else if(input1 > input2)
+	{
+		alert("Player2 wins!");
+	}
+	else
+	{
+		alert("Tie!");
+	}
+}
+</script>
+
